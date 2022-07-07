@@ -8,7 +8,7 @@ pip3 install GPUtil
 pip3 install requests
 mkdir /home/user/script
 cd /home/user/script
-wget https://github.com/frogizz31/mining/releases/download/v1.0/test.py
+wget https://raw.githubusercontent.com/frogizz31/mining/main/test.py
 wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_386.tar.gz
 tar -xvf gdrive_2.1.1_linux_386.tar.gz
 ./gdrive about
