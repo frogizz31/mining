@@ -1,0 +1,2 @@
+chmod +x script_install.sh
+dos2unix script_install.sh
