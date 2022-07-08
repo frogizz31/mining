@@ -151,7 +151,6 @@ def write_test(list_rentabilite):
 	f.write(text)
 	f.close()
 
-#write_test()
 list_gpus = get_gpu_info()
 list_gpus_mining_info = []
 for gpu in list_gpus:
