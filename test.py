@@ -106,7 +106,6 @@ def get_info_whattomine(list_mining_info):
 		rep = requests.get(request)
 		rep = rep.json()
 		quantite = float(rep['estimated_rewards'])
-		print(quantite)
 		objectif = objectif_vente[settings["currency"]]
 		cost = float(rep["cost"].replace("$",""))
 		rentabilite = round(quantite*objectif-cost,2)
