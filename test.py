@@ -143,9 +143,9 @@ def write_test(list_rentabilite):
 	text+="Objectif de vente pour rentabilite ETH a 4000\n"
 	
 	for ligne in list_rentabilite:
-		if ligne["currency"] != "ETH":
-			rentabilite_sur = rentabilite_eth / ligne["quantite"]
-			text += ligne["currency"]+"," + str(rentabilite_sur)+"\n"
+
+		rentabilite_sur = rentabilite_eth / ligne["quantite"]
+		text += ligne["currency"]+"," + str(rentabilite_sur)+"\n"
 			
 	text+="\n"
 	f = open("/home/user/script/test.txt", "a")
