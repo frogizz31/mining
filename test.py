@@ -95,6 +95,7 @@ def get_info_whattomine(list_mining_info):
 	list_rentabilite = []
 
 	for settings in list_mining_info:
+		
 		request = "https://whattomine.com/coins/"
 		request += whattomine_coin[settings["currency"]]
 		request += ".json?hr="
@@ -108,24 +109,45 @@ def get_info_whattomine(list_mining_info):
 		objectif = objectif_vente[settings["currency"]]
 		cost = float(rep["cost"].replace("$",""))
 		rentabilite = round(quantite*objectif-cost,2)
+		
+		dict_rentabilite = {
+			"currency" : settings["currency"],
+			"quantite" : quantite,
+			"objectif_vente" : objectif_vente[settings["currency"]],
+			"cost" : cost,
+			"rentabilite" : rentabilite
+		}
+		
 		print(settings["currency"] + "  Rentabilite a " , objectif , " : " , rentabilite)
-		rentabilite = {"currency" : settings["currency"], "rentabilite" : rentabilite}
-		list_rentabilite.append(rentabilite)
+
+		list_rentabilite.append(dict_rentabilite)
 
 	return(list_rentabilite)
 
 		
 
 def write_test(list_rentabilite):
+	
+	rentabilite_eth = 0
 
 	text="\n"
 	now = datetime.now()
 	dt_string = now.strftime("%d/%m/%Y %H:%M")
-	text += dt_string + "\n"
+	text += dt_string + "\nRentabilite\n" 
 	for ligne in list_rentabilite:
 		text += ligne["currency"]+"," + str(ligne["rentabilite"])+"\n"
-	text+="\n"
+		
+		if ligne["currency"] == "ETH":
+			rentabilite_eth = ligne["rentabilite"]
+			
+	text+="Objectif de vente pour rentabilite ETH a 4000\n"
 	
+	for ligne in list_rentabilite:
+		if ligne["currency"] != "ETH":
+			rentabilite_sur = rentabilite_eth / ligne["quantite"]
+			text += ligne["currency"]+"," + str(rentabilite_sur)+"\n"
+			
+	text+="\n"
 	f = open("/home/user/script/test.txt", "a")
 	f.write(text)
 	f.close()
