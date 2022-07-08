@@ -106,6 +106,7 @@ def get_info_whattomine(list_mining_info):
 		rep = requests.get(request)
 		rep = rep.json()
 		quantite = float(rep['estimated_rewards'])
+		print(quantite)
 		objectif = objectif_vente[settings["currency"]]
 		cost = float(rep["cost"].replace("$",""))
 		rentabilite = round(quantite*objectif-cost,2)
@@ -143,8 +144,8 @@ def write_test(list_rentabilite):
 	text+="Objectif de vente pour rentabilite ETH a 4000\n"
 	
 	for ligne in list_rentabilite:
-		rentabilite_sur = rentabilite_eth / ligne["quantite"]
-		text += ligne["currency"]+"," + str(rentabilite_sur)+"\n"
+		objectif_vente_sur = (rentabilite_eth + ligne["cost"])  / ligne["quantite"]
+		text += ligne["currency"]+"," + str(objectif_vente_sur)+"\n"
 			
 	text+="\n"
 	f = open("/home/user/script/test.txt", "a")
