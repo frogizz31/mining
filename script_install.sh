@@ -13,7 +13,7 @@ cd /home/user/script
 wget https://raw.githubusercontent.com/frogizz31/mining/main/test.py
 wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_386.tar.gz
 tar -xvf gdrive_2.1.1_linux_386.tar.gz
-if [[ "$is_drive" == "Y" ]]; then 
+if [ "$is_drive" = "Y" ]; then 
   ./gdrive about
 fi
 python3 test.py
