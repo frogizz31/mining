@@ -18,3 +18,9 @@ if [ "$is_drive" = "Y" ]; then
 fi
 python3 test.py
 echo '0 * * * * python3 /home/user/script/test.py' >> /hive/etc/crontab.root
+
+read -p "Reboot to apply changes ? (Y/n) : " is_reboot
+
+if [ "$is_reboot" = "Y" ]; then 
+  reboot
+fi
