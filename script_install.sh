@@ -19,7 +19,7 @@ fi
 python3 test.py
 echo '0 * * * * python3 /home/user/script/test.py' >> /hive/etc/crontab.root
 
-read -p "Reboot to apply changes ? (Y/n) : " is_reboot
+read -p "Reboot now to apply changes ? (Y/n) : " is_reboot
 
 if [ "$is_reboot" = "Y" ]; then 
   reboot
