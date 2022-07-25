@@ -27,14 +27,14 @@ def get_gpu_mining_info(gpu_name):
 	if gpu_name == "NVIDIA GeForce RTX 3070":
 		eth = get_dict_mining_info("ETH",62,135,1100,2600,135)
 		etc = get_dict_mining_info("ETC",62,135,1100,2600,135)
-		rvn = get_dict_mining_info("RVN",30,160,0,2100,160)
+		rvn = get_dict_mining_info("RVN",30,160,1300,2300,180)
 		flux = get_dict_mining_info("FLX",56.5,150,200,0,150)
 
 
 	if gpu_name == "NVIDIA GeForce RTX 3080":
 		eth = get_dict_mining_info("ETH",100,240,1200,2600,240)
 		etc = get_dict_mining_info("ETC",100,240,1200,2600,240)
-		rvn = get_dict_mining_info("RVN",42,250,0,2200,250)
+		rvn = get_dict_mining_info("RVN",50.5,280,1400,2600,300)
 		flux = get_dict_mining_info("FLX",81.5,255,150,0,255)
 
 	list_gpus_mining_info.append(eth)
