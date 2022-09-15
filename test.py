@@ -185,7 +185,7 @@ def get_info_whattomine(list_mining_info):
 
 def write_test(list_rentabilite):
 	
-	rentabilite_eth = 0
+	rentabilite_eth = 16
 
 	text="\n"
 	now = datetime.now()
@@ -196,7 +196,6 @@ def write_test(list_rentabilite):
 		
 		if ligne["currency"] == "ETH":
 			# rentabilite_eth = ligne["rentabilite"]
-			 rentabilite_eth = 16
 			
 	text+="\nObjectif de vente pour rentabilite ETH au sommet\n\n"
 	
