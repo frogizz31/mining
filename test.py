@@ -55,7 +55,7 @@ def get_gpu_mining_info(gpu_name):
 		ubq = get_dict_mining_info("UBQ",100,240,1200,2600,240)
 
 	
-	list_gpus_mining_info = [eth,rvn,flux,etc,firo,btg,ae,aion,beam,vtc,exp,ubq]
+	list_gpus_mining_info = [rvn,flux,etc,firo,btg,ae,aion,beam,vtc,exp,ubq]
 
 	return(list_gpus_mining_info)
 
@@ -68,8 +68,7 @@ def define_dict_mining_info_currency(currency,hashrate,conso):
 	return(dict_mining_info_currency)
 
 def get_mining_info(list_gpus_mining_info):
-
-	dict_eth_mining_info = define_dict_mining_info_currency("ETH",0,0)
+	
 	dict_rvn_mining_info = define_dict_mining_info_currency("RVN",0,0)
 	dict_flx_mining_info = define_dict_mining_info_currency("FLX",0,0)
 	dict_etc_mining_info = define_dict_mining_info_currency("ETC",0,0)
@@ -83,9 +82,6 @@ def get_mining_info(list_gpus_mining_info):
 	dict_ubq_mining_info = define_dict_mining_info_currency("UBQ",0,0)
 	for gpu in list_gpus_mining_info:
 		for settings in gpu:
-			if settings["currency"] == "ETH":
-				dict_eth_mining_info["hashrate"]+=settings["hashrate"]
-				dict_eth_mining_info["conso"]+=settings["conso"]
 			if settings["currency"] == "RVN":
 				dict_rvn_mining_info["hashrate"]+=settings["hashrate"]
 				dict_rvn_mining_info["conso"]+=settings["conso"]
@@ -126,7 +122,7 @@ def get_mining_info(list_gpus_mining_info):
 
 def get_info_whattomine(list_mining_info):
 	
-	whattomine_coin = { "ETH" : "151",
+	whattomine_coin = { 
 						"RVN" : "234",
 						"FLX" : "287",
 						"ETC" : "162",
@@ -140,7 +136,7 @@ def get_info_whattomine(list_mining_info):
 						"UBQ" : "173",
 					  }
 
-	objectif_vente = { "ETH" : 4765,
+	objectif_vente = { "
 						"RVN" : 0.23515,
 						"FLX" : 3.15,
 						"ETC" : 100,
