@@ -136,7 +136,7 @@ def get_info_whattomine(list_mining_info):
 						"UBQ" : "173",
 					  }
 
-	objectif_vente = { "
+	objectif_vente = { 
 						"RVN" : 0.23515,
 						"FLX" : 3.15,
 						"ETC" : 100,
