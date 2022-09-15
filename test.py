@@ -120,7 +120,7 @@ def get_mining_info(list_gpus_mining_info):
 				dict_ubq_mining_info["hashrate"]+=settings["hashrate"]
 				dict_ubq_mining_info["conso"]+=settings["conso"]
 
-	list_mining_info = [dict_eth_mining_info,dict_rvn_mining_info,dict_flx_mining_info,dict_etc_mining_info,dict_fir_mining_info,dict_btg_mining_info,dict_ae_mining_info,dict_aion_mining_info,dict_beam_mining_info,dict_vtc_mining_info,dict_exp_mining_info,dict_ubq_mining_info]
+	list_mining_info = [dict_rvn_mining_info,dict_flx_mining_info,dict_etc_mining_info,dict_fir_mining_info,dict_btg_mining_info,dict_ae_mining_info,dict_aion_mining_info,dict_beam_mining_info,dict_vtc_mining_info,dict_exp_mining_info,dict_ubq_mining_info]
 	return(list_mining_info)
 
 
@@ -199,7 +199,8 @@ def write_test(list_rentabilite):
 		text += ligne["currency"]+" à "+str(ligne["objectif_vente"])+" : " + str(ligne["rentabilite"])+"\n"
 		
 		if ligne["currency"] == "ETH":
-			rentabilite_eth = ligne["rentabilite"]
+			# rentabilite_eth = ligne["rentabilite"]
+			 rentabilite_eth = 16
 			
 	text+="\nObjectif de vente pour rentabilite ETH au sommet\n\n"
 	
