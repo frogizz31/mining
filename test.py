@@ -225,17 +225,3 @@ list_mining_info = get_mining_info(list_gpus_mining_info)
 list_rentabilite = get_info_whattomine(list_mining_info)
 text=write_test(list_rentabilite)
 print(text)
-
-intents = discord.Intents.default()
-
-intents.messages = True
-
-client = discord.Client(intents=intents)
-
-@client.event
-async def on_ready():
-	channel = client.get_channel(1019167836071022594)
-	await channel.send(text)	
-	await client.close()
-
-client.run('MTAxOTE2OTM3NDA3MTk0NzI4NQ.GbW07Q.oot3TipIFA-KdKgmEF4LyqRbpE9iTtppVBwkNE')
