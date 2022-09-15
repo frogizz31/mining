@@ -194,7 +194,7 @@ def write_test(list_rentabilite):
 	for ligne in list_rentabilite:
 		text += ligne["currency"]+" à "+str(ligne["objectif_vente"])+" : " + str(ligne["rentabilite"])+"\n"
 		
-		if ligne["currency"] == "ETH":
+		# if ligne["currency"] == "ETH":
 			# rentabilite_eth = ligne["rentabilite"]
 			
 	text+="\nObjectif de vente pour rentabilite ETH au sommet\n\n"
