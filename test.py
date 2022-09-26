@@ -232,5 +232,10 @@ print(text)
 
 client = message_discord.init_client()
 
+async def on_ready(client,text):
+        channel = client.get_channel(1019167836071022594)
+        await channel.send(text)
+        await client.close()
+
 message_discord.run_client(client)
 
