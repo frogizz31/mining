@@ -38,6 +38,7 @@ def get_gpu_mining_info(gpu_name):
 		vtc = get_dict_mining_info("VTC",1.23,130,1600,2100,135)
 		exp = get_dict_mining_info("EXP",62,135,1100,2600,135)
 		ubq = get_dict_mining_info("UBQ",62,135,1100,2600,135)
+		ethw = get_dict_mining_info("ETHW",62,135,1100,2600,135)
 
 
 	if gpu_name == "NVIDIA GeForce RTX 3080":
@@ -53,9 +54,10 @@ def get_gpu_mining_info(gpu_name):
 		vtc = get_dict_mining_info("VTC",1.5,180,1600,2100,240)
 		exp = get_dict_mining_info("EXP",100,240,1200,2600,240)
 		ubq = get_dict_mining_info("UBQ",100,240,1200,2600,240)
+		ethw = get_dict_mining_info("ETHW",100,240,1200,2600,240)
 
 	
-	list_gpus_mining_info = [rvn,flux,etc,firo,btg,ae,aion,beam,vtc,exp,ubq]
+	list_gpus_mining_info = [rvn,flux,etc,firo,btg,ae,aion,beam,vtc,exp,ubq,ethw]
 
 	return(list_gpus_mining_info)
 
@@ -80,6 +82,7 @@ def get_mining_info(list_gpus_mining_info):
 	dict_vtc_mining_info = define_dict_mining_info_currency("VTC",0,0)
 	dict_exp_mining_info = define_dict_mining_info_currency("EXP",0,0)
 	dict_ubq_mining_info = define_dict_mining_info_currency("UBQ",0,0)
+	dict_ethw_mining_info = define_dict_mining_info_currency("ETHW",0,0)
 	for gpu in list_gpus_mining_info:
 		for settings in gpu:
 			if settings["currency"] == "RVN":
@@ -115,8 +118,11 @@ def get_mining_info(list_gpus_mining_info):
 			if settings["currency"] == "UBQ":
 				dict_ubq_mining_info["hashrate"]+=settings["hashrate"]
 				dict_ubq_mining_info["conso"]+=settings["conso"]
+			if settings["currency"] == "ETHW":
+				dict_ethw_mining_info["hashrate"]+=settings["hashrate"]
+				dict_ethw_mining_info["conso"]+=settings["conso"]
 
-	list_mining_info = [dict_rvn_mining_info,dict_flx_mining_info,dict_etc_mining_info,dict_fir_mining_info,dict_btg_mining_info,dict_ae_mining_info,dict_aion_mining_info,dict_beam_mining_info,dict_vtc_mining_info,dict_exp_mining_info,dict_ubq_mining_info]
+	list_mining_info = [dict_rvn_mining_info,dict_flx_mining_info,dict_etc_mining_info,dict_fir_mining_info,dict_btg_mining_info,dict_ae_mining_info,dict_aion_mining_info,dict_beam_mining_info,dict_vtc_mining_info,dict_exp_mining_info,dict_ubq_mining_info,dict_ethw_mining_info]
 	return(list_mining_info)
 
 
@@ -134,6 +140,7 @@ def get_info_whattomine(list_mining_info):
 						"VTC" : "5",
 						"EXP" : "154",
 						"UBQ" : "173",
+						"ETHW" : "353",
 					  }
 
 	objectif_vente = { 
@@ -148,6 +155,7 @@ def get_info_whattomine(list_mining_info):
 						"VTC" : 1.64,
 						"EXP" : 0.16,
 						"UBQ" : 0.577,
+						"ETHW" : 60,
 
 					  }
 
