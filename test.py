@@ -2,6 +2,7 @@ import requests
 import GPUtil
 from datetime import datetime
 import discord
+import token
 
 
 def get_gpu_info():
@@ -241,4 +242,4 @@ async def on_ready():
 	await channel.send(text)	
 	await client.close()
 
-client.run('ENTRER_TOKEN_ICI')
+token.run(client)
