@@ -2,7 +2,7 @@ import requests
 import GPUtil
 from datetime import datetime
 import discord
-import token
+import message_discord
 
 
 def get_gpu_info():
@@ -230,16 +230,7 @@ list_rentabilite = get_info_whattomine(list_mining_info)
 text=write_test(list_rentabilite)
 print(text)
 
-intents = discord.Intents.default()
+client = message_discord.init_client()
 
-intents.messages = True
+message_discord.run_client(client)
 
-client = discord.Client(intents=intents)
-
-@client.event
-async def on_ready():
-	channel = client.get_channel(1019167836071022594)
-	await channel.send(text)	
-	await client.close()
-
-token.run(client)
