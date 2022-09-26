@@ -233,7 +233,7 @@ print(text)
 client = message_discord.init_client()
 
 @client.event
-async def on_ready(client,text):
+async def on_ready():
         channel = client.get_channel(1019167836071022594)
         await channel.send(text)
         await client.close()
